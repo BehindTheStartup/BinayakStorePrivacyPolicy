@@ -3,4 +3,4 @@
 This page contains the Privacy Policy for the Binayak Store mobile applications.
 
 **Privacy Policy:**
-https://bikashniraula.github.io/BinayakStorePrivacyPolicy/privacy-policy.html
+https://behindthestartup.github.io/BinayakStorePrivacyPolicy/privacy-policy.html
