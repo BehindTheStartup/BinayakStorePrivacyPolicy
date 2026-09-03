@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account & Data Deletion Request</title>
+<style>
+  :root {
+    --bg: #f7f7f8;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5f5f66;
+    --border: #e4e4e7;
+    --accent: #d64545;
+    --accent-dark: #b93838;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+  }
+  .card p, .card li {
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+  .card ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+  select, input[type="email"], textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    margin-top: 6px;
+    background: #fff;
+    color: var(--text);
+  }
+  label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    display: block;
+    margin-top: 16px;
+  }
+  label:first-of-type { margin-top: 0; }
+  button {
+    margin-top: 22px;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: var(--accent-dark); }
+  .note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Account & Data Deletion Request</h1>
+  <p class="subtitle">Request deletion of your account and associated data from Binayak's apps — no login or app install required.</p>
+
+  <div class="card">
+    <h2>What gets deleted</h2>
+    <p>When your request is processed, we permanently delete:</p>
+    <ul>
+      <li>Your profile information (name, phone number, email)</li>
+      <li>Your booking and order history</li>
+      <li>Saved preferences and app settings</li>
+      <li>Authentication credentials tied to your account</li>
+    </ul>
+    <p>Some information may be retained where required by law (e.g. transaction records for tax/accounting purposes) for a limited period, after which it is also deleted.</p>
+  </div>
+
+  <div class="card">
+    <h2>Submit a request</h2>
+    <form id="deletion-form">
+      <label for="app">Which app is your account on?</label>
+      <select id="app" name="app" required>
+        <option value="">Select an app</option>
+        <option value="Customer App">Binayak Customer App</option>
+        <option value="Admin App">Binayak Admin App</option>
+      </select>
+
+      <label for="email">Account email or phone number</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="details">Additional details (optional)</label>
+      <textarea id="details" name="details" rows="3" placeholder="Anything that helps us find your account"></textarea>
+
+      <button type="submit">Submit deletion request</button>
+      <p class="note">This opens your email client with a pre-filled deletion request. We typically process requests within 30 days and will confirm by email once complete.</p>
+    </form>
+  </div>
+
+  <div class="footer">
+    Questions? Contact us at <a href="mailto:support@binayakstore.com.np">support@binayakstore.com.np</a>
+  </div>
+</div>
+
+<script>
+  document.getElementById('deletion-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const app = document.getElementById('app').value;
+    const email = document.getElementById('email').value;
+    const details = document.getElementById('details').value;
+
+    const subject = encodeURIComponent('Account Deletion Request - ' + app);
+    const body = encodeURIComponent(
+      'App: ' + app + '\n' +
+      'Account email/phone: ' + email + '\n' +
+      'Details: ' + (details || 'N/A') + '\n\n' +
+      'I am requesting permanent deletion of my account and associated data.'
+    );
+
+    window.location.href = 'mailto:support@binayakstore.com.np?subject=' + subject + '&body=' + body;
+  });
+</script>
+</body>
+</html>
