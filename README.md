@@ -4,8 +4,8 @@ This repository contains legal compliance pages for the Binayak Store mobile app
 
 ## Pages
 
-- **Privacy Policy:** https://bikashniraula.github.io/BinayakStorePrivacyPolicy/privacy-policy.html
-- **Account & Data Deletion:** https://bikashniraula.github.io/BinayakStorePrivacyPolicy/account-deletion.html
+- **Privacy Policy:** https://behindthestartup.github.io/BinayakStorePrivacyPolicy/privacy-policy.html
+- **Account & Data Deletion:** https://behindthestartup.github.io/BinayakStorePrivacyPolicy/account-deletion.html
 
 ## Publishing
 
@@ -18,4 +18,4 @@ Pages are automatically published to GitHub Pages via the `gh-pages` branch. To 
 ## Data Deletion URL for Google Play
 
 Use this URL in Google Play Console → App content → Data safety → Data deletion:
-https://bikashniraula.github.io/BinayakStorePrivacyPolicy/account-deletion.html
+https://behindthestartup.github.io/BinayakStorePrivacyPolicy/account-deletion.html
